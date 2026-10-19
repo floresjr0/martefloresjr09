@@ -190,10 +190,11 @@
     .label {
       font-family: var(--mono);
       font-size: 11px;
+      font-weight: 400;
       color: var(--text-3);
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
+      margin: 0 0 1.5rem;
     }
 
     /* ─── HERO ─── */
@@ -231,7 +232,19 @@
     .hero-roles {
       font-size: 14px;
       color: var(--text-2);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-intro {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.65;
       margin-bottom: 1.5rem;
+    }
+
+    .hero-intro strong {
+      font-weight: 500;
+      color: var(--text);
     }
 
     .hero-links {
@@ -293,7 +306,11 @@
       line-height: 1.5;
     }
 
-    .tl-title { font-size: 14px; font-weight: 500; }
+    .tl-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0;
+    }
 
     .tl-sub {
       font-size: 12px;
@@ -391,11 +408,14 @@
     }
 
     .proj-panel {
+      display: none;
       padding: 1.25rem 1.5rem;
-      animation: projFadeIn 0.3s ease;
     }
 
-    .proj-panel[hidden] { display: none; }
+    .proj-panel.active {
+      display: block;
+      animation: projFadeIn 0.3s ease;
+    }
 
     @keyframes projFadeIn {
       from { opacity: 0; transform: translateY(6px); }
@@ -491,7 +511,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .proj-panel { animation: none; }
+      .proj-panel.active { animation: none; }
     }
 
     /* ─── CERTS ─── */
